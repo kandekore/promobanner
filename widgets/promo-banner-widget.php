@@ -198,13 +198,15 @@ class Promo_Banner_Widget extends Widget_Base {
             <div class="promo-left">
 
                 <?php if (!empty($settings['launch_date'])) : ?>
-                    <div class="promo-countdown"
-                        data-date="<?php echo esc_attr($settings['launch_date']); ?>">
-                        <span class="days">00</span>d
-                        <span class="hours">00</span>h
-                        <span class="minutes">00</span>m
-                        <span class="seconds">00</span>s
-                    </div>
+                    <div class="promo-countdown-wrapper">
+    <div class="promo-countdown" data-date="<?php echo esc_attr($settings['launch_date']); ?>">
+        <span class="days">00</span>d
+        <span class="hours">00</span>h
+        <span class="minutes">00</span>m
+        <span class="seconds">00</span>s
+    </div>
+</div>
+
                 <?php endif; ?>
 
                 <?php if (!empty($settings['heading'])) : ?>

@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Promo Launch Banner for Elementor
  * Description: Custom promotional launch banner with countdown, pricing, buttons and circular image cluster.
- * Version: 1.0
+ * Version: 1.0.1
  * Author: D Kandekore
  */
 
