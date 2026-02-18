@@ -86,6 +86,16 @@ class Promo_Banner_Widget extends Widget_Base {
                 'default' => '+ VAT'
             ]
         );
+        
+        $this->add_control(
+    'price_text_top',
+    [
+        'label' => 'Top Price Text (e.g. Limited Time Offer)',
+        'type' => Controls_Manager::TEXT,
+        'default' => '',
+    ]
+);
+
 
         /* Buttons */
 
@@ -215,21 +225,40 @@ class Promo_Banner_Widget extends Widget_Base {
                     </h2>
                 <?php endif; ?>
 
-                <?php if (!empty($settings['sale_price']) || !empty($settings['regular_price'])) : ?>
-                    <div class="promo-pricing">
-                        <?php if (!empty($settings['regular_price'])) : ?>
-                            <span class="regular-price"><?php echo esc_html($settings['regular_price']); ?></span>
-                        <?php endif; ?>
+            <?php if (!empty($settings['sale_price']) || !empty($settings['regular_price'])) : ?>
+    <div class="promo-pricing">
 
-                        <?php if (!empty($settings['sale_price'])) : ?>
-                            <span class="sale-price"><?php echo esc_html($settings['sale_price']); ?></span>
-                        <?php endif; ?>
+        <div class="promo-pricing-left">
+            <?php if (!empty($settings['regular_price'])) : ?>
+                <span class="regular-price">
+                    <?php echo esc_html($settings['regular_price']); ?>
+                </span>
+            <?php endif; ?>
+<br>
+            <?php if (!empty($settings['sale_price'])) : ?>
+                <span class="sale-price">
+                    <?php echo esc_html($settings['sale_price']); ?>
+                </span>
+            <?php endif; ?>
+        </div>
 
-                        <?php if (!empty($settings['price_text'])) : ?>
-                            <span class="price-text"><?php echo esc_html($settings['price_text']); ?></span>
-                        <?php endif; ?>
-                    </div>
-                <?php endif; ?>
+        <div class="promo-pricing-right">
+            <?php if (!empty($settings['price_text_top'])) : ?>
+                <span class="price-text-top">
+                   <strong><?php echo esc_html($settings['price_text_top']); ?></strong> 
+                </span>
+            <?php endif; ?>
+
+            <?php if (!empty($settings['price_text'])) : ?>
+                <span class="price-text">
+                    <?php echo esc_html($settings['price_text']); ?>
+                </span>
+            <?php endif; ?>
+        </div>
+
+    </div>
+<?php endif; ?>
+
 
                 <div class="promo-buttons">
                     <?php if (!empty($settings['button_1_text'])) : ?>

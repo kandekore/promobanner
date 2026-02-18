@@ -117,7 +117,6 @@
     border-radius: 50%;
     overflow: hidden;
     border: 6px solid #fff;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
     transition: 0.4s ease;
 }
 
@@ -157,6 +156,74 @@
 .promo-circle:hover {
     transform: scale(1.05);
 }
+h2.promo-heading {
+    color: white;
+    margin-top: 30px;
+    font-size: 70px;
+    text-shadow: 2px 2px #52a8d7;
+}
+.promo-pricing {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+/* LEFT SIDE – PRICES */
+.promo-pricing-left {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    flex-shrink: 0; /* critical */
+}
+
+/* RIGHT SIDE – TEXT */
+.promo-pricing-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding-left: 30px;
+    flex: 1; /* allows text to take remaining space */
+    min-width: 0; /* prevents forced wrapping */
+}
+
+/* Vertical Divider */
+.promo-pricing-right::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10%;
+    height: 80%;
+    width: 2px;
+    background: rgba(255,255,255,0.4);
+}
+
+
+/* Styling */
+
+.regular-price {
+    text-decoration: line-through;
+    font-size: 20px;
+    opacity: 0.6;
+}
+
+.sale-price {
+    font-size: 34px;
+    font-weight: 800;
+    color: #ff3b6b;
+}
+
+.price-text-top {
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.price-text {
+    font-size: 16px;
+}
 
 /* =========================
    RESPONSIVE
@@ -181,5 +248,12 @@
     .promo-circle {
         left: 50%;
         transform: translateX(-50%);
+    }
+}
+@media (max-width: 768px) {
+    .promo-pricing {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
     }
 }
