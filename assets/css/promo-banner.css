@@ -17,19 +17,34 @@
 }
 
 .promo-countdown {
-    display: inline-block;
-    background: rgba(255,255,255,0.12);
-    backdrop-filter: blur(6px);
-    padding: 18px 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    background: rgb(82 169 215);
+    padding: 25px 45px;
     border-radius: 10px;
-    font-size: 24px;
+
+    font-size: 19px;
     font-weight: 700;
-    margin-bottom: 30px;
+    color: white;
+    text-shadow: 1px 1px black;
+
+    border: solid 2px black;
+    box-shadow: 3px 3px #8c8c8c52;
+
+    height: 80px;
+    width: 390px;
+
+    /* Prevent number shifting */
+    font-variant-numeric: tabular-nums;
 }
 
 .promo-countdown span {
-    font-size: 28px;
-    margin-right: 5px;
+    font-size: 50px;
+    min-width: 60px;  /* prevents jump */
+    text-align: center;
 }
 
 .promo-heading {
@@ -115,26 +130,26 @@
 /* Circle Positions (Creative Layout) */
 
 .promo-circle:nth-child(1) {
-    width: 220px;
-    height: 220px;
-    top: 40px;
-    right: 60px;
+    width: 250px;
+    height: 250px;
+    top: -40px;
+    right: 120px;
     z-index: 3;
 }
 
 .promo-circle:nth-child(2) {
-    width: 180px;
-    height: 180px;
-    bottom: 40px;
-    right: 160px;
+    width: 350px;
+    height: 350px;
+    bottom: -75px;
+    right: 200px;
     z-index: 2;
 }
 
 .promo-circle:nth-child(3) {
-    width: 140px;
-    height: 140px;
+    width: 300px;
+    height: 300px;
     top: 120px;
-    right: 0;
+    right: -55px;
     z-index: 1;
 }
 
